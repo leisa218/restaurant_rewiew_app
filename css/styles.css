@@ -44,9 +44,11 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
-  padding: 25px;
   text-align: center;
   text-transform: uppercase;
+}
+#footer .wrapper{
+  padding: 25px;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -116,6 +118,7 @@ nav h1 a {
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
+  display: inline;
 }
 .filter-options select {
   background-color: white;
@@ -136,6 +139,10 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center
 }
 #restaurants-list li {
   background-color: #fff;
@@ -204,8 +211,8 @@ nav h1 a {
 }
 .inside #footer {
   bottom: 0;
-  position: absolute;
-  width: 50%;
+  position: fixed;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -239,10 +246,15 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
   width: 50%;
 }
+#restaurant-container .wrapper{
+    padding: 140px 40px 30px;
+}
 #reviews-container {
+  
+}
+#reviews-container .wrapper{
   padding: 30px 40px 80px;
 }
 #reviews-container h2 {
@@ -272,4 +284,50 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+/* helper classes*/
+.hidden{
+  display: none;
+}
+/* media querys*/
+@media only screen and (max-width: 1150px) {
+  .inside #reviews-container, .inside #restaurant-container{
+    width:40%;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .filter-options{
+    height:120px;
+    padding:10px 0 0 20px;
+  }
+  .filter-options h2, .filter-options select{
+    display: block;
+    padding:5px 0 0 0;
+  }
+  .filter-options select{
+    display: block;
+    padding: 0 0 0 20px;
+  }
+}
+
+
+
+@media only screen and (max-width: 790px) {
+  .inside #reviews-container, .inside #restaurant-container{
+    width:100%;
+  }
+  .inside #map-container{
+    height: 300px;
+    position: relative;
+    right: 0;
+    top: 130px;
+    width: 100%;
+    z-index: 1;
+  }
+  #breadcrumb{
+    width:calc(100% - 80px);
+    position: relative;
+    z-index: 2;
+  }
 }
