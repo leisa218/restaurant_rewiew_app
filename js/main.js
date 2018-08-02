@@ -86,6 +86,10 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
+  let map = document.getElementById('map');
+  map.setAttribute("role", "application")
+  map.setAttribute('aria-label', 'location');
+
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -161,7 +165,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = 'Picture of Restaurant ' + restaurant.name;
+  image.alt = 'Restaurant '+ restaurant.name + ' in ' + restaurant.neighborhood;
   li.append(image);
 
   const name = document.createElement('h2');
