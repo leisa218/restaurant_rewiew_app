@@ -67,6 +67,9 @@ nav h1 a {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+nav.breadcrumb{
+  text-align: left;
+}
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
@@ -108,7 +111,6 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  height: 50px;
   background-color: #3397DB;
   align-items: center;
 }
@@ -225,7 +227,7 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -241,7 +243,7 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
@@ -297,9 +299,8 @@ nav h1 a {
 }
 
 @media only screen and (max-width: 580px) {
-  .filter-options{
-    height:120px;
-    padding:10px 0 0 20px;
+  .filter-options .wrapper{
+    padding:10px 0 10px 20px;
   }
   .filter-options h2, .filter-options select{
     display: block;
